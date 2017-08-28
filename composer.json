@@ -1,0 +1,19 @@
+{
+    "name": "SecureLogin",
+    "authors": [
+        {
+            "name": "alenkalac",
+            "email": "alenkalac87@gmail.com"
+        }
+    ],
+    "require": {
+        "silex/silex": "~2.0",
+        "doctrine/dbal": "v2.5.13"
+    },
+    "autoload": {
+         "psr-4": {
+            "xample\\": "src"
+        }
+    }
+   
+}
