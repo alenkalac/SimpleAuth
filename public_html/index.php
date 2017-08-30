@@ -5,7 +5,7 @@
 
 	$app = new Silex\Application();
 
-	//$app['debug'] = true;
+	$app['debug'] = true;
 
 	require_once "../app/routes.php";
 
@@ -21,6 +21,12 @@
 			'port'		=> '3307'
 		]
 	));
+
+	$app->register(new Silex\Provider\TwigServiceProvider(), array(
+	    'twig.path' => __DIR__.'/../templates',
+	));
+
+	$app->register(new Silex\Provider\SessionServiceProvider());
 
 	$app->run();
 ?>

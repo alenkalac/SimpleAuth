@@ -15,7 +15,7 @@
 			$pass = $r->get('password'); //5 char or more
 			$hwid = $r->get('hwid'); //32
 
-			$output = [];
+			$output = ["error" => "", "message" => ""];
 
 			//AUTH USER WITH USER+PASS
 			//GET USER_ID
@@ -144,7 +144,7 @@
 			$serial = $r->get('serial'); // 16
 			$hwid = $r->get('hwid'); //32
 
-			$output = [];
+			$output = ["error" => "", "message" => ""];
 
 			//MAKE SURE NO USERNAME DUPLICATES
 
@@ -162,7 +162,7 @@
 			else if(!$this->validSerialKey($serial, $app['db']))
 				$output['error'] = "Invalid Key";
 
-			if(!isset($output['error'])) {
+			if(empty($output['error'])) {
 
 				$app['db']->beginTransaction(); //if anything fails - rollback
 
